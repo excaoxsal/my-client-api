@@ -3,6 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;  
 use Illuminate\Support\Facades\Redis;
 
 class MyClient extends Model
@@ -10,7 +11,7 @@ class MyClient extends Model
     protected $table = 'my_client';
     protected $primaryKey = 'id';
     public $timestamps = false;
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $fillable = [
         'name', 'slug', 'is_project', 'self_capture',
         'client_prefix', 'client_logo', 'address',
