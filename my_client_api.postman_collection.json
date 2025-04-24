@@ -1,0 +1,103 @@
+{
+    "info": {
+      "name": "My Client API",
+      "_postman_id": "uuid-example-id",
+      "description": "API for managing client data with S3 & Redis integration",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Clients",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8000/api/clients",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "clients"]
+          }
+        }
+      },
+      {
+        "name": "Create Client",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              { "key": "name", "value": "PT Cipta Inovasi", "type": "text" },
+              { "key": "slug", "value": "pt-cipta-inovasi", "type": "text" },
+              { "key": "is_project", "value": "1", "type": "text" },
+              { "key": "self_capture", "value": "1", "type": "text" },
+              { "key": "client_prefix", "value": "PTCI", "type": "text" },
+              {
+                "key": "client_logo",
+                "type": "file",
+                "src": "/path/to/sample.jpg"
+              },
+              { "key": "address", "value": "Jl. Inovasi No.1", "type": "text" },
+              { "key": "phone_number", "value": "0213456789", "type": "text" },
+              { "key": "city", "value": "Jakarta", "type": "text" }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/clients",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "clients"]
+          }
+        }
+      },
+      {
+        "name": "Get Client by ID",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8000/api/clients/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "clients", "1"]
+          }
+        }
+      },
+      {
+        "name": "Update Client",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              { "key": "name", "value": "PT Cipta Teknologi", "type": "text" }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8000/api/clients/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "clients", "1"]
+          }
+        }
+      },
+      {
+        "name": "Soft Delete Client",
+        "request": {
+          "method": "DELETE",
+          "url": {
+            "raw": "http://localhost:8000/api/clients/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8000",
+            "path": ["api", "clients", "1"]
+          }
+        }
+      }
+    ]
+  }
+  
